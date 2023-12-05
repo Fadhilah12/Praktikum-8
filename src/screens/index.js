@@ -6,5 +6,4 @@ import Register from './Register'
 import Splash from './Splash'
 
 
-
 export {Home, Profile, Add, Login, Register, Splash}
