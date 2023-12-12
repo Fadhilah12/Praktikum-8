@@ -1,4 +1,7 @@
-import { Text, Select, SelectBackdrop, SelectContent, SelectDragIndicator, SelectDragIndicatorWrapper, SelectInput, SelectItem, SelectPortal, SelectTrigger, FormControlLabel } from "@gluestack-ui/themed";
+import {
+  Text, Select, SelectBackdrop, SelectContent, SelectDragIndicator, SelectDragIndicatorWrapper, SelectInput,
+  SelectItem, SelectPortal, SelectTrigger, FormControlLabel
+} from "@gluestack-ui/themed";
 import React, { useState } from "react";
 
 const Pilihan = ({ label, datas, width, height, fontSize, selectedValue, onValueChange }) => {
@@ -10,7 +13,8 @@ const Pilihan = ({ label, datas, width, height, fontSize, selectedValue, onValue
         </FormControlLabel>
         <Select onValueChange={onValueChange} selectedValue={selectedValue}>
           <SelectTrigger>
-            <SelectInput fontSize={fontSize ? fontSize : "$lg"} placeholder="-- Pilih ---" width={width} height={height ? height : "$40"} color="$black" />
+            <SelectInput fontSize={fontSize ? fontSize : "$lg"} placeholder="-- Pilih ---"
+              width={width} height={height ? height : "$40"} color="$black" />
           </SelectTrigger>
           <SelectPortal>
             <SelectBackdrop />
@@ -33,7 +37,8 @@ const Pilihan = ({ label, datas, width, height, fontSize, selectedValue, onValue
         </FormControlLabel>
         <Select onValueChange={onValueChange} selectedValue={selectedValue}>
           <SelectTrigger>
-            <SelectInput fontSize={fontSize ? fontSize : "$lg"} placeholder="-- Pilih ---" width={width} height={height ? height : "$40"} color="$black" />
+            <SelectInput fontSize={fontSize ? fontSize : "$lg"} placeholder="-- Pilih ---"
+              width={width} height={height ? height : "$40"} color="$black" />
           </SelectTrigger>
           <SelectPortal>
             <SelectBackdrop />
@@ -41,9 +46,9 @@ const Pilihan = ({ label, datas, width, height, fontSize, selectedValue, onValue
               <SelectDragIndicatorWrapper borderWidth={"$1"} borderRadius={"$sm"}>
                 <SelectDragIndicator />
               </SelectDragIndicatorWrapper>
-              <SelectItem label={"Dummy"} value={null} />
-              <SelectItem label={"Dummy"} value={null} />
-              <SelectItem label={"Dummy"} value={null} />
+              {datas.map((data, index) => (
+                <SelectItem key={index} label={data} value={data} />
+              ))}
             </SelectContent>
           </SelectPortal>
         </Select>
